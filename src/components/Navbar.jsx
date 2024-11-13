@@ -7,7 +7,7 @@ import { Container } from "../Container/Container";
 export default function Navbar() {
   return (
     <Container>
-      <div className="flex justify-between items-center pb-10">
+      <div className="flex justify-between items-center">
         <Typography type={"h1"} className={"text-white"}>
           Logo Here
         </Typography>
