@@ -7,7 +7,8 @@ export default function Typography({ children, type, color, className }) {
       className={classNames(
         {
           "text-3xl font-bold": type === "h1",
-          "text-lg font-semibold": type === "p",
+          "text-lg font-normal text-white": type === "p",
+          "text-xl font-normal text-white": type === "h2",
           "text-green-600": color === "primary",
           "text-blue-600": color === "secondary",
         },
