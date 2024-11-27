@@ -13,6 +13,7 @@ import { Navigation } from 'swiper/modules';
 export default function App() {
   return (
     <>
+    
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
         <SwiperSlide><img src={Slider}></img></SwiperSlide>
         <SwiperSlide><img src={Slider}></img></SwiperSlide>
@@ -20,6 +21,7 @@ export default function App() {
         <SwiperSlide>Slide 4</SwiperSlide>
 
       </Swiper>
+
     </>
   );
 }
