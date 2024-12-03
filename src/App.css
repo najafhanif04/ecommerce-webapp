@@ -63,3 +63,6 @@ body {
   height: 600px;
   object-fit: cover;
 }
+.swiper-button-prev, .swiper-button-next {
+  color: #f59e0b !important;
+}
