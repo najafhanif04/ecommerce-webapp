@@ -18,7 +18,7 @@ const DetailPage = () => {
   }, []);
 
   return (
-    <div    >
+    <div>
        <div className="grid grid-cols-3 gap-x-4">
         <img src={product.image} alt={product.title} />{" "}
         {/* Display product image */}
