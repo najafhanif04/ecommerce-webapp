@@ -9,6 +9,7 @@ import Navbar from './components/Navbar'
 import Contact from './pages/Contact'
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "./store/addToCart/cartSlice";
+import ProductDetail from './pages/DetailPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -34,6 +35,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path='about' element={<About/>} />
           <Route path='contact' element={<Contact />} />
+          <Route path=":id" element={<ProductDetail />} />
         </Route>
       </Routes>
     </>

@@ -1,33 +1,39 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-const DetailPage = () => {
-  const { id } = useParams();
-  const [product, setProduct] = useState({});
+const ProductDetail = () => {
+  const { id } = useParams(); // Extract the product ID from the URL
+  const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    try {
-      fetch(`https://fakestoreapi.com/products/${id}`)
-        .then((res) => res.json())
-        .then((data) => setProduct(data));
-      setLoading(false);
-    } catch (error) {
-      setLoading(false);
-    }
-  }, []);
+    const fetchProduct = async () => {
+      try {
+        const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+        const data = await response.json();
+        setProduct(data);
+      } catch (error) {
+        console.error('Error fetching product:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProduct();
+  }, [id]);
+
+  if (loading) return <div>Loading...</div>;
+
+  if (!product) return <div>Product not found.</div>;
 
   return (
-    <div>
-       <div className="grid grid-cols-3 gap-x-4">
-        <img src={product.image} alt={product.title} />{" "}
-        {/* Display product image */}
-        <h2>{product.title}</h2>
-        <p>{product.description}</p> {/* Display product description */}
-        <p>Price: ${product.price}</p> {/* Display product price */}
-      </div>
+    <div className="container mx-auto p-4">
+      <img src={product.image} alt={product.title} className="w-full max-w-md mx-auto" />
+      <h1 className="text-2xl font-bold my-4">{product.title}</h1>
+      <p className="text-gray-700">{product.description}</p>
+      <p className="text-amber-500 text-lg font-bold">Price: ${product.price}</p>
     </div>
   );
 };
 
-export default DetailPage;
+export default ProductDetail;
