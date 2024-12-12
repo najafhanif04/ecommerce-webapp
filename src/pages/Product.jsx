@@ -32,7 +32,8 @@ const Product = () => {
           <div key={id} className="border-4 border-gray-500 my-3">
             <h1 className="text-black">{title}</h1>
             <Link to={`${id}`}>
-              <img src={image} width={300} height={200} alt={title} /> {/* added alt for accessibility */}
+              <img src={image} width={300} height={200} alt={title} />{" "}
+              {/* added alt for accessibility */}
             </Link>
             <h1>${price}</h1>
           </div>
