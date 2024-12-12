@@ -28,7 +28,6 @@ const ProductDetail = () => {
 
   return (
     <div className="container mx-auto p-4">
-
       <img src={product.image} alt={product.title} className="w-full max-w-md mx-auto" />
       <h1 className="text-2xl font-bold my-4">{product.title}</h1>
       <p className="text-gray-700">{product.description}</p>
