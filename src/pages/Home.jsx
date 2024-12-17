@@ -27,7 +27,6 @@ export default function Home() { // Make sure everything is inside the Home func
         setLoading(false); // Once fetching is done, set loading to false
       }
     };
-
     fetchProducts();
   }, []); // Empty dependency array ensures this runs only once on mount
 

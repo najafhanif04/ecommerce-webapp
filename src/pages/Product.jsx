@@ -26,6 +26,7 @@ const Product = () => {
   }
 
   return (
+
     <div>
       <div className="grid grid-cols-5 gap-x-5">
         {products.map(({ title, price, image, id }) => (
@@ -40,6 +41,7 @@ const Product = () => {
         ))}
       </div>
     </div>
+    
   );
 };
 
