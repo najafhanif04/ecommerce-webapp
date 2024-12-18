@@ -13,15 +13,12 @@ import { Navigation, Autoplay, EffectFade } from 'swiper/modules';
 export default function App() {
   return (
     <>
-    
       <Swiper navigation={true} autoplay={{ delay: 3000 }} modules={[Navigation , Autoplay, EffectFade]} className="mySwiper">
         <SwiperSlide><img src={Slider}></img></SwiperSlide>
         <SwiperSlide><img src={Slider}></img></SwiperSlide>
         {/* <SwiperSlide>Slide 3</SwiperSlide>
         <SwiperSlide>Slide 4</SwiperSlide> */}
-
       </Swiper>
-
     </>
   );
 }
