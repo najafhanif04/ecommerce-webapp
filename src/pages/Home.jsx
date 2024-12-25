@@ -73,10 +73,10 @@ export default function Home() { // Make sure everything is inside the Home func
           ))}
         </div>
         <div className="grid grid-cols-5 gap-x-5">
-          {filteredProducts.map(({ title, price, image, id }) => (
+          {filteredProducts.map(({ title, price, image, id ,category}) => (
             <div key={id} className="shadow-amber-700 shadow my-3 p-1">
               
-              <Link to={`${id}`}>
+              <Link to={`${category}/${title}`}>
                 <img
                   src={image || "default-image.jpg"} // Image fallback
                  className='min-w-full h-96 object-cover'
