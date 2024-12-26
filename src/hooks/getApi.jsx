@@ -5,7 +5,7 @@ export const getApi = (url) => {
   const [data, setData] = useState();
   const [error, setError] = useState(false);
 
-  fetch(`https://localhost:8000/${url}`)
+  fetch(`https://fakestoreapi.com/products/${url}`)
     .then((resp) => resp.json())
     .then((data) => setData(data))
     .catch((err) => setError(err));
